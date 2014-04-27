@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="rhodium-load" verbose="1">
+    <test name="test">
+        <groups>
+            <run>
+                <include name="unit"/>
+                <exclude name="broken"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="net.mgfeller.rhodium.load.*"/>
+        </packages>
+    </test>
+</suite>

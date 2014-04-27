@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Author: Michael Gfeller -->
+<ruleset name="Custom ruleset" xmlns="http://pmd.sf.net/ruleset/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+         xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd">
+  <description>Ruleset for Websocket Appender</description>
+
+  <!-- BASIC RULESET -->
+  <rule ref="rulesets/basic.xml"/>
+
+  <!-- BRACES RULESET -->
+  <rule ref="rulesets/braces.xml"/>
+
+  <!-- DESIGN RULESET -->
+  <rule ref="rulesets/design.xml">
+    <exclude name="AccessorClassGeneration"/>
+    <!-- fix me -->
+    <exclude name="UncommentedEmptyMethod"/>
+    <!-- comes later ... -->
+  </rule>
+
+  <!-- IMPORTS RULESET -->
+  <rule ref="rulesets/imports.xml"/>
+
+  <!-- NAMING RULESET -->
+  <rule ref="rulesets/naming.xml">
+    <exclude name="ShortVariable"/>
+    <exclude name="LongVariable"/>
+    <exclude name="ShortMethodName"/>
+  </rule>
+
+  <!-- STRINGS RULESET -->
+  <rule ref="rulesets/strings.xml"/>
+
+  <!-- COUPLING RULESET -->
+  <rule ref="rulesets/coupling.xml">
+    <!-- setting minimum to a higher value doesnt work ?! -->
+    <exclude name="ExcessiveImports"/>
+  </rule>
+
+  <!-- SUNSECURE RULESET -->
+  <rule ref="rulesets/sunsecure.xml"/>
+
+  <!-- TYPE RESOLUTION RULESET -->
+  <rule ref="rulesets/typeresolution.xml">
+    <exclude name="UnusedImports"/>
+    <!-- using IDE for this (this.that.* results in violation) -->
+  </rule>
+
+  <!-- UNUSED CODE RULESET -->
+  <rule ref="rulesets/unusedcode.xml"/>
+
+  <!--CODE SIZE RULESET-->
+  <rule ref="rulesets/codesize.xml">
+    <exclude name="TooManyMethods"/>
+    <exclude name="TooManyFields"/>
+  </rule>
+  <rule ref="rulesets/codesize.xml/TooManyMethods">
+    <properties>
+      <property name="maxmethods" value="40"/>
+    </properties>
+  </rule>
+  <rule ref="rulesets/codesize.xml/TooManyFields">
+    <properties>
+      <property name="maxfields" value="20"/>
+    </properties>
+  </rule>
+
+  <!--OPTIMIZATION RULESET -->
+  <rule ref="rulesets/optimizations.xml"/>
+</ruleset>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Hello log</title>
+
+</head>
+<body>
+    <h1>Log text</h1>
+
+    <div id="logTxt" />
+
+    <script type="text/javascript">
+        socket = new WebSocket("ws://localhost:8084/rhodium/websockets/logevents");
+        socket.onmessage = function (event) {
+            if (event.data) {
+                var div = document.getElementById('logTxt');
+
+                div.innerHTML += event.data;
+                div.innerHTML += "<br/>";
+
+            }
+        };
+
+
+
+    </script>
+</body>
+</html>

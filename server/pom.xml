@@ -28,6 +28,18 @@
             <scope>provided</scope>
         </dependency>
 
+        <!--<dependency>-->
+            <!--<groupId>javax.enterprise.concurrent</groupId>-->
+            <!--<artifactId>javax.enterprise.concurrent-api</artifactId>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+
+        <dependency>
+        <groupId>org.jboss.spec.javax.ejb</groupId>
+        <artifactId>jboss-ejb-api_3.2_spec</artifactId>
+        <scope>provided</scope>
+    </dependency>
+
         <dependency>
             <groupId>org.jboss.spec.javax.annotation</groupId>
             <artifactId>jboss-annotations-api_1.2_spec</artifactId>
@@ -57,6 +69,11 @@
             <artifactId>testng</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>apache-log4j-extras</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -103,5 +120,15 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>JBoss repository</id>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>no</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>

@@ -3,6 +3,7 @@ package net.mgfeller.rhodium.rest;
 
 
 import net.mgfeller.rhodium.common.LogEvent;
+import org.apache.log4j.Logger;
 
 import javax.ejb.Asynchronous;
 import javax.ejb.Stateless;
@@ -18,7 +19,7 @@ import javax.ws.rs.core.Response;
 
 /*
  * #%L
- * log4jappender
+ * server
  * %%
  * Copyright (C) 2014 Vincent Andersson
  * %%
@@ -40,13 +41,16 @@ import javax.ws.rs.core.Response;
 @Path("/")
 public class RestLogResource {
     @Inject
-    Event<LogEvent> logEventListeners;
+    private Event<LogEvent> logEventListeners;
 
-       @GET
+    @Inject
+    private Logger logger;
+
+    @GET
     @Path("environment")
     @Produces("application/json")
     public JsonObject getEnvironment() {
-           System.out.println("RestLogResource.getEnvironment");
+        logger.info("RestLogResource.getEnvironment");
         return Json.createObjectBuilder()
                 .add("status", "OK")
                 .build();
@@ -58,7 +62,7 @@ public class RestLogResource {
     @Consumes("text/plain")
     @Path("logevents")
     public void postLogEvent(@Suspended final AsyncResponse asyncResponse, final String logEventString) {
-        System.out.println("RestLogResource.postLogEvent");
+        logger.info("RestLogResource.postLogEvent");
         logEventListeners.fire(new LogEvent(logEventString));
         asyncResponse.resume(Response.ok().build());
     }

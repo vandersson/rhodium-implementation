@@ -17,7 +17,7 @@
 
     <properties>
         <pmdRuleSetDir>..</pmdRuleSetDir>
-        <license.licenseResolver>file://${project.parent.basedir}/src/license</license.licenseResolver>
+        <license.licenseResolver>file:///${project.parent.basedir}/src/license</license.licenseResolver>
     </properties>
 
     <dependencies>

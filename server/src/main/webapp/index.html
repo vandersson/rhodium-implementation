@@ -5,26 +5,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Hello log</title>
 
+    <script type="text/javascript" src="logeventclient.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
-    <h1>Log text</h1>
+<div id="header">
+    <span class="heading">Log text</span>
+    <div id="logSts">&nbsp</div>
+</div>
 
-    <div id="logTxt" />
-
-    <script type="text/javascript">
-        socket = new WebSocket("ws://localhost:8084/rhodium/websockets/logevents");
-        socket.onmessage = function (event) {
-            if (event.data) {
-                var div = document.getElementById('logTxt');
-
-                div.innerHTML += event.data;
-                div.innerHTML += "<br/>";
-
-            }
-        };
-
-
-
-    </script>
+<div id="logBody">
+    <p>
+        <span id="logTxt">&nbsp</span>
+    </p>
+</div>
+<script type="text/javascript">
+    openConnection();
+</script>
 </body>
 </html>

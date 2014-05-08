@@ -1,0 +1,45 @@
+body {
+    font-family: Minion, Times;
+
+    background-color: #DDDDCC;
+    margin: 0px auto;
+}
+
+#header {
+    background-color: #999977;
+    color: #222200;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    padding-left:30px;
+}
+
+.heading {
+    font-size: 30pt;
+    color: #444422;
+}
+
+#logSts {
+
+
+}
+
+#logBody {
+    padding-left:10px;
+}
+
+.statusClosed {
+    color: #a00000;
+}
+
+.statusOpen {
+    color: #007000;
+}
+
+.logClosed {
+    color: #bbbbbb;
+}
+
+.logOpen {
+    color: #444444;
+}

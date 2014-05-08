@@ -44,7 +44,7 @@
         <license-maven-plugin.version>1.6</license-maven-plugin.version>
 
         <license.licenseName>rhodium_license</license.licenseName>
-        <license.licenseResolver>file://${project.basedir}/src/license</license.licenseResolver>
+        <license.licenseResolver>file:///${project.basedir}/src/license</license.licenseResolver>
 
     </properties>
 

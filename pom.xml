@@ -168,7 +168,7 @@
                             <failOnMissingHeader>true</failOnMissingHeader>
                             <licenseName>rhodium_license</licenseName>
                             <excludes>
-                                <exclude>**/*</exclude>
+                                <exclude>**/*.properties</exclude>
                             </excludes>
                         </configuration>
                     </execution>

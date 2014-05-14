@@ -2,7 +2,7 @@ package net.mgfeller.rhodium.common;
 
 /*
  * #%L
- * log4jappender
+ * server
  * %%
  * Copyright (C) 2014 Vincent Andersson
  * %%
